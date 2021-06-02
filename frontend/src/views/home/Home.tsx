@@ -3,9 +3,7 @@ import React from 'react'
 
 const Home = () => {
     return (
-        <Box p={4}>
-            Home Page
-        </Box>
+        <div></div>
     )
 }
 

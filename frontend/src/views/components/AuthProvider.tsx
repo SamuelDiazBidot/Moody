@@ -6,19 +6,18 @@ interface User {
     token: string,
 }
 
-const AuthContext = createContext([{}, () => {}])
+const AuthContext = createContext<[User | null, React.Dispatch<React.SetStateAction<User | null>>]>([null, () => {}])
 
 const AuthProvider = ({children}: {children: React.ReactNode} ) => {
-    const [user, setUser] = useState<User | undefined>(undefined)
+    const [user, setUser] = useState<User | null>(null)
 
     useEffect(() => {
           if(sessionStorage.getItem('state')) {
-              let x = sessionStorage.getItem('state')
+              let x: string | null = sessionStorage.getItem('state')
 
-              if (x == null) {
-                setUser(undefined)
-              } else {
-                setUser(JSON.parse(x.toString()))
+              if (x !== null) {
+                let y: User = JSON.parse(x!.toString())
+                setUser(y)
               }
         }
     }, [])
@@ -28,7 +27,7 @@ const AuthProvider = ({children}: {children: React.ReactNode} ) => {
     }, [user])
 
     return (
-        <AuthContext.Provider value={[user!, setUser]}>
+        <AuthContext.Provider value={[user, setUser]}>
             {children}
         </AuthContext.Provider>
     )
