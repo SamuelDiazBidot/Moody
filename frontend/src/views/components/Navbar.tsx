@@ -46,7 +46,7 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue('white', 'gray.800')} px={4} borderBottom={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.900')}>
+    <Box position="sticky" bg={useColorModeValue('white', 'gray.800')} px={4} borderBottom={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.900')}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -57,7 +57,7 @@ export default function Navbar() {
             variant="ghost"
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>
+            <Box as={ReactLink} to="/">
                 <Heading>
                   Moody
                 </Heading>
@@ -137,9 +137,9 @@ const NotSignedInNavbar = () => {
           fontSize={'sm'}
           fontWeight={600}
           color={'white'}
-          bg={'pink.400'}
+          bg={'blue.400'}
           _hover={{
-            bg: 'pink.300',
+            bg: 'blue.500',
           }}>
           Sign Up
         </Button>
