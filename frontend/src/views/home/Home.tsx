@@ -1,10 +1,18 @@
-import { Box } from '@chakra-ui/layout'
 import React from 'react'
+import {
+  Box, Stack,
+} from '@chakra-ui/react'
+import CTA from './components/CTA'
+import Steps from './components/Steps'
 
 const Home = () => {
     return (
-        <div></div>
-    )
+        <Stack>
+            <CTA />
+            <Steps />
+        </Stack>
+
+  )
 }
 
 export default Home
