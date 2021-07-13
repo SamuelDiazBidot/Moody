@@ -6,6 +6,7 @@ import Navbar from "./views/components/Navbar"
 import Home from "./views/home/Home"
 import { SignIn } from "./views/SignIn";
 import { SignUp } from "./views/SignUp";
+import JournalEntryEditor from "./views/journalEntryEditor/JournalEntryEditor"; 
 
 export const App = () => (
     <ChakraProvider theme={theme}>
@@ -16,6 +17,7 @@ export const App = () => (
             <Route path='/' exact component={Home}/>
             <Route path='/signin' exact component={SignIn}/>
             <Route path='/signup' exact component={SignUp}/>
+            <Route path='/journal-entry' exact component={JournalEntryEditor}/>
           </Switch>
         </AuthProvider>
       </Router>

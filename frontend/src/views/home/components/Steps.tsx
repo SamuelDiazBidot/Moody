@@ -16,8 +16,8 @@ const Feature = ({ title, text, number }: FeatureProps) => {
         </Circle>
       </Center>
       
-      <Text fontWeight={600}>{title}</Text>
-      <Text color={'gray.600'}>{text}</Text>
+      <Text align='center' fontWeight={600}>{title}</Text>
+      <Text align='center' color={'gray.600'}>{text}</Text>
     </Stack>
   );
 };
@@ -25,6 +25,11 @@ const Feature = ({ title, text, number }: FeatureProps) => {
 const Steps = () => {
     return (
     <Box p={4}>
+      <Center m={4}>
+        <Heading>
+          How to use <Text as={'span'} color={'blue.400'}> Moody </Text>
+        </Heading>
+      </Center>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature
           number={1}
